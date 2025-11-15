@@ -5,29 +5,32 @@ import Footer from './components/Footer.vue'
 
 <template>
   <div class="min-h-screen flex flex-col">
-    <!-- Navbar -->
+    <!-- Navbar (selalu tampil) -->
     <Navbar />
     
-    <!-- Main Content Area -->
-    <main class="flex-grow pt-30">
-      <!-- Content akan ditampilkan di sini -->
-      <div class="min-h-screen bg-gradient-to-br from-blue-50 to-gray-100 flex items-center justify-center p-8">
-        <div class="text-center">
-          <h1 class="text-5xl font-bold text-gray-800 mb-4">
-            Selamat Datang di BSF Academy
-          </h1>
-          <p class="text-xl text-gray-600">
-            Tempat terbaik untuk mengembangkan kemampuan futsal Anda
-          </p>
-        </div>
-      </div>
+    <!-- Router View - konten berubah sesuai route -->
+    <main class="flex-grow">
+      <router-view v-slot="{ Component }">
+        <transition name="fade" mode="out-in">
+          <component :is="Component" />
+        </transition>
+      </router-view>
     </main>
 
-    <!-- Footer -->
+    <!-- Footer (selalu tampil) -->
     <Footer />
   </div>
 </template>
 
 <style scoped>
-/* Custom styles jika diperlukan */
+/* Transition animation */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
 </style>
