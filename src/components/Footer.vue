@@ -1,10 +1,10 @@
 <script setup>
 const quickLinks = [
-  { name: 'Beranda', href: '#beranda' },
-  { name: 'Tentang Kami', href: '#tentang' },
-  { name: 'Akademi', href: '#akademi' },
-  { name: 'Program', href: '#program' },
-  { name: 'Hubungi Kami', href: '#hubungi' }
+  { name: 'Beranda', to: '/' },
+  { name: 'Tentang Kami', to: '/tentang-kami' },
+  { name: 'Akademi', to: '/akademi' },
+  { name: 'Program', to: '/program' },
+  { name: 'Hubungi Kami', to: '/hubungi-kami' }
 ]
 
 const contactInfo = [
@@ -39,15 +39,16 @@ const socialMedia = [
 
         <!-- Quick Links -->
         <div>
+          <h3 class="text-lg font-semibold mb-4">Tautan Cepat</h3>
           <ul class="space-y-2">
             <li v-for="link in quickLinks" :key="link.name">
-              <a
-                :href="link.href"
-                class="text-gray-300 hover:text-blue-400 transition-colors duration-300"
+              <router-link
+                :to="link.to"
+                class="text-gray-300 hover:text-blue-400 transition-colors duration-300 inline-flex items-center group"
               >
-                <span class="mr-2 transform group-hover:translate-x-1 transition-transform duration-300"></span>
+                <span class="mr-2 transform group-hover:translate-x-1 transition-transform duration-300">›</span>
                 {{ link.name }}
-              </a>
+              </router-link>
             </li>
           </ul>
         </div>
@@ -113,8 +114,18 @@ const socialMedia = [
 
           <!-- Newsletter (Optional) -->
           <div class="mt-6">
+            <p class="text-sm text-gray-400 mb-2">Berlangganan Newsletter</p>
             <div class="flex">
-              <input/>
+              <input
+                type="email"
+                placeholder="Email Anda"
+                class="flex-1 px-4 py-2 bg-gray-700 text-white rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              <button class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-r-lg transition-colors duration-300">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </button>
             </div>
           </div>
         </div>
@@ -128,6 +139,12 @@ const socialMedia = [
             &copy; {{ new Date().getFullYear() }} Blue Shark Futsal Academy. All rights reserved.
           </p>
           <div class="flex space-x-6 mt-4 md:mt-0">
+            <router-link to="#" class="text-sm text-gray-400 hover:text-blue-400 transition-colors duration-300">
+              Privacy Policy
+            </router-link>
+            <router-link to="#" class="text-sm text-gray-400 hover:text-blue-400 transition-colors duration-300">
+              Terms of Service
+            </router-link>
           </div>
         </div>
       </div>
