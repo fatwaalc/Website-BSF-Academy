@@ -60,10 +60,10 @@ const seniorAcademyFocus = [
       <!-- Content -->
       <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
         <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
-          Program Blue Shark Futsal Academy
+          Blue Shark Futsal Academy
         </h1>
         <p class="text-xl md:text-2xl text-white/90 mb-12 max-w-4xl mx-auto">
-          Program pembinaan berkelanjutan selama 6 bulan dengan sistem weekend intensif
+          Jenis Akademi berkelanjutan selama 6 bulan dengan sistem weekend intensif
         </p>
 
         <!-- Program Highlights -->
