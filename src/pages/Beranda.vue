@@ -1,32 +1,38 @@
 <script setup>
 import Heroes from '../components/Heroes.vue'
 
+// Import gambar news
+import news1Image from '../assets/news1.jpg'
+import news2Image from '../assets/news2.jpg'
+import news3Image from '../assets/news3.jpg'
+import news4Image from '../assets/news4.jpg'
+
 // Data berita
 const newsItems = [
   {
     id: 1,
-    image: '../assets/news1.jpg',
+    image: news1Image,
     title: 'Pendaftaran Batch 4 Program 6 Bulan Dibuka!',
     description: 'Pendaftaran batch 4 untuk program weekend intensif 6 bulan telah dibuka! Tersedia untuk Junior, Development, dan Senior Academy. Kuota terbatas, daftar segera untuk trial gratis.',
     date: '15 Oktober 2025'
   },
   {
     id: 2,
-    image: '../assets/news2.jpg',
+    image: news2Image,
     title: 'Peserta Batch 3 Tunjukkan Progress Signifikan',
     description: 'Evaluasi bulan ke-4 batch 3 menunjukkan progress luar biasa. Semua kategori usia menunjukkan peningkatan teknik, fisik, dan mental yang luar biasa. Semua kategori usia menunjukkan peningkatan teknik, fisik, dan mental yang luar biasa.',
     date: '10 Oktober 2025'
   },
   {
     id: 3,
-    image: '../assets/news3.jpg',
+    image: news3Image,
     title: 'Penambahan Ahli Gizi & Psikolog ke Tim',
     description: 'Blue Shark memperkuat tim profesional dengan menambah ahli gizi olahraga dan psikolog berlisensi. Semua peserta kini mendapat konsultasi lengkap untuk pembinaan holistik yang optimal.',
     date: '5 Oktober 2025'
   },
   {
     id: 4,
-    image: '../assets/news4.jpg',
+    image: news4Image,
     title: 'Renovasi Asrama untuk Kenyamanan Maksimal',
     description: 'Fasilitas asrama telah direnovasi total dengan kamar ber-AC, tempat tidur baru, dan ruang belajar. Memberikan kenyamanan maksimal bagi peserta selama program weekend intensif 6 bulan.',
     date: '1 Oktober 2025'
