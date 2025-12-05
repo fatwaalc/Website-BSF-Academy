@@ -54,12 +54,12 @@ const navigateTo = (routeName) => {
             </svg>
           </button>
 
-          <!-- Secondary Button -->
+          <!-- Secondary Button - Changed to Daftar Sekarang -->
           <button 
-            @click="navigateTo('HubungiKami')"
+            @click="navigateTo('Formulir')"
             class="bg-white hover:bg-gray-100 text-gray-800 font-semibold px-8 py-4 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl"
           >
-            Hubungi Kami
+            Daftar Sekarang
           </button>
         </div>
       </div>

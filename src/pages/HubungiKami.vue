@@ -9,11 +9,21 @@ const formData = ref({
   pesan: ''
 })
 
+// State untuk modal
+const showSuccessModal = ref(false)
+
 const handleSubmit = () => {
   console.log('Form submitted:', formData.value)
-  alert('Pesan Anda telah dikirim! Kami akan segera menghubungi Anda.')
   
-  // Reset form
+  // Tampilkan modal sukses
+  showSuccessModal.value = true
+}
+
+// Close modal
+const closeModal = () => {
+  showSuccessModal.value = false
+  
+  // Reset form setelah close
   formData.value = {
     namaLengkap: '',
     email: '',
@@ -242,9 +252,117 @@ const handleSubmit = () => {
         </div>
       </div>
     </div>
+
+    <!-- Success Modal -->
+    <Transition name="modal">
+      <div 
+        v-if="showSuccessModal"
+        class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4"
+        @click.self="closeModal"
+      >
+        <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 relative animate-bounce-in">
+          <!-- Close Button -->
+          <button
+            @click="closeModal"
+            class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
+          >
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+
+          <!-- Success Icon -->
+          <div class="flex justify-center mb-6">
+            <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center">
+              <svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+          </div>
+
+          <!-- Title -->
+          <h2 class="text-3xl font-bold text-gray-800 mb-4 text-center">
+            Pesan Terkirim! ✉️
+          </h2>
+
+          <!-- Message -->
+          <div class="text-center mb-6 space-y-3">
+            <p class="text-gray-800 font-semibold text-lg">
+              Terima kasih telah menghubungi kami!
+            </p>
+            <p class="text-gray-700 leading-relaxed">
+              Pesan Anda telah berhasil dikirim ke<br>
+              <span class="text-blue-600 font-semibold">Blue Shark Futsal Academy</span>
+            </p>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Tim kami akan segera merespons pesan Anda melalui email atau telepon dalam waktu 1x24 jam
+            </p>
+          </div>
+
+          <!-- Success Message with Icon -->
+          <div class="bg-blue-50 border-l-4 border-blue-600 p-4 rounded mb-6">
+            <p class="text-blue-700 text-sm font-semibold flex items-center">
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              Pastikan Anda memeriksa email dan telepon secara berkala
+            </p>
+          </div>
+
+          <!-- Close Button -->
+          <button
+            @click="closeModal"
+            class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-lg transition-colors duration-300"
+          >
+            Tutup
+          </button>
+        </div>
+      </div>
+    </Transition>
   </section>
 </template>
 
 <style scoped>
-/* Custom styles jika diperlukan */
+/* Modal Transitions */
+.modal-enter-active,
+.modal-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.modal-enter-from,
+.modal-leave-to {
+  opacity: 0;
+}
+
+.modal-enter-active .animate-bounce-in,
+.modal-leave-active .animate-bounce-in {
+  transition: transform 0.3s ease;
+}
+
+.modal-enter-from .animate-bounce-in {
+  transform: scale(0.9);
+}
+
+.modal-leave-to .animate-bounce-in {
+  transform: scale(0.9);
+}
+
+/* Bounce In Animation */
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-bounce-in {
+  animation: bounceIn 0.5s ease-out;
+}
 </style>

@@ -166,7 +166,10 @@ const seniorAcademyFocus = [
                 </p>
               </div>
 
-              <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 rounded-lg transition-colors duration-300 shadow-lg hover:shadow-xl">
+              <button
+                @click="$router.push({ name: 'Formulir' })"
+                class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-lg transition-colors duration-300 shadow-lg hover:shadow-xl"
+              >
                 Daftar Sekarang
               </button>
             </div>
@@ -264,7 +267,10 @@ const seniorAcademyFocus = [
                 </p>
               </div>
 
-              <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 rounded-lg transition-colors duration-300 shadow-lg hover:shadow-xl">
+              <button
+                @click="$router.push({ name: 'Formulir' })"
+                class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-lg transition-colors duration-300 shadow-lg hover:shadow-xl"
+              >
                 Daftar Sekarang
               </button>
             </div>
@@ -340,7 +346,10 @@ const seniorAcademyFocus = [
                 </p>
               </div>
 
-              <button class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 rounded-lg transition-colors duration-300 shadow-lg hover:shadow-xl">
+              <button
+                @click="$router.push({ name: 'Formulir' })"
+                class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-lg transition-colors duration-300 shadow-lg hover:shadow-xl"
+              >
                 Daftar Sekarang
               </button>
             </div>

@@ -4,6 +4,7 @@ import TentangKami from '../pages/TentangKami.vue'
 import Akademi from '../pages/Akademi.vue'
 import Program from '../pages/Program.vue'
 import HubungiKami from '../pages/HubungiKami.vue'
+import Formulir from '../pages/Formulir.vue'
 
 const routes = [
     {
@@ -31,6 +32,11 @@ const routes = [
         name: "HubungiKami",
         component: HubungiKami
     },
+    {
+        path: "/formulir",
+        name: "Formulir",
+        component: Formulir
+    }
 ]
 
 const router = createRouter({

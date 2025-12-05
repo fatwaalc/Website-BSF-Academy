@@ -1,68 +1,111 @@
 <script setup>
 import Heroes from '../components/Heroes.vue'
 
-// Data Official Team
+// Import gambar coaches
+import coach1Image from '../assets/coach1.jpg'
+import coach2Image from '../assets/coach2.jpg'
+import coach3Image from '../assets/coach3.jpeg'
+import nutrisiImage from '../assets/coach4.png'
+import psikologImage from '../assets/coach5.jpg'
+import fisikImage from '../assets/coach6.jpg'
+
+// Import gambar facilities
+import facility1Image from '../assets/facility1.jpg'
+import facility2Image from '../assets/facility2.jpg'
+import facility3Image from '../assets/facility3.jpg'
+import facility4Image from '../assets/facility4.jpg'
+import facility5Image from '../assets/facility5.jpg'
+import facility6Image from '../assets/facility6.jpg'
+
+// Data Official Team (6 orang)
 const coaches = [
   {
     id: 1,
-    name: 'Coach Budi Santoso',
-    image: '../assets/coach1.jpg',
+    name: 'Coach Shin Tae Yong',
+    image: coach1Image,
     role: 'Pelatih Junior Academy',
     experience: '8 Tahun Pengalaman',
-    certification: 'SERTIFIKASI - AFC Futsal Level 1',
+    certification: 'AFC Futsal Level 1',
     specialty: 'Spesialis pembinaan usia dini (TK - Kelas 1 SD) dengan metode fun learning'
   },
   {
     id: 2,
-    name: 'Coach Rizki Pratama',
-    image: '../assets/coach2.jpg',
+    name: 'Coach Patrick Kluivert',
+    image: coach2Image,
     role: 'Pelatih Development Academy',
     experience: '10 Tahun Pengalaman',
-    certification: 'SERTIFIKASI - AFC Futsal Level 2',
+    certification: 'AFC Futsal Level 2',
     specialty: 'Spesialis pengembangan teknik fundamental (Kelas 2-6 SD)'
   },
   {
     id: 3,
-    name: 'Coach Andi Wijaya',
-    image: '../assets/coach3.jpg',
+    name: 'Coach Justin',
+    image: coach3Image,
     role: 'Pelatih Senior Academy',
     experience: '11 Tahun Pengalaman',
-    certification: 'SERTIFIKASI - AFC Futsal Level 3',
+    certification: 'AFC Futsal Level 3',
     specialty: 'Mantan pemain profesional, spesialis taktik lanjutan (SMP-SMA)'
+  },
+  {
+    id: 4,
+    name: 'dr. Tirta',
+    image: nutrisiImage,
+    role: 'Ahli Gizi Olahraga',
+    experience: '7 Tahun Pengalaman',
+    certification: 'Certified Sports Nutritionist',
+    specialty: 'Merancang menu makanan bergizi untuk performa optimal atlet muda'
+  },
+  {
+    id: 5,
+    name: 'Lionel Messi, S.Psi., M.Psi., Psikolog',
+    image: psikologImage,
+    role: 'Psikolog Olahraga',
+    experience: '9 Tahun Pengalaman',
+    certification: 'Licensed Sports Psychologist',
+    specialty: 'Pembinaan mental, motivasi, dan manajemen emosi atlet'
+  },
+  {
+    id: 6,
+    name: 'Coach Ade Rai',
+    image: fisikImage,
+    role: 'Pelatih Fisik',
+    experience: '8 Tahun Pengalaman',
+    certification: 'Certified Strength & Conditioning Specialist',
+    specialty: 'Program kondisi fisik, kekuatan, dan injury prevention'
   }
 ]
 
-// Data Fasilitas (Updated sesuai gambar)
+// Data Fasilitas
 const facilities = [
   {
     id: 1,
     name: '2 Lapangan Futsal',
-    image: '../assets/facility1.jpg'
+    image: facility1Image
   },
   {
     id: 2,
     name: 'Asrama Nyaman',
-    image: '../assets/facility2.jpg'
+    image: facility2Image
   },
   {
     id: 3,
     name: 'Meeting Room',
-    image: '../assets/facility3.jpg'
+    image: facility3Image
   },
   {
     id: 4,
     name: 'Gym & Fitness',
-    image: '../assets/facility4.jpg'
+    image: facility4Image
   },
   {
     id: 5,
     name: 'Ruang Ganti',
-    image: '../assets/facility5.jpg'
+    image: facility5Image
   },
   {
     id: 6,
-    name: 'Katering Bergizi',
-    image: '../assets/facility6.jpg'
+    name: 'Makanan Bergizi',
+    image: facility6Image
   }
 ]
 </script>
@@ -74,8 +117,8 @@ const facilities = [
       <!-- Background Image dari Heroes -->
       <div class="absolute inset-0 z-0">
         <img 
-          src="../assets/Heroes_Section.jpg" 
-          alt="Blue Shark Futsal Academy Team" 
+          src="../assets/Heroes_Section.jpg"
+          alt="Blue Shark Futsal Academy Team"
           class="w-full h-full object-cover"
         />
         <!-- Dark Blue Overlay -->
@@ -193,11 +236,11 @@ const facilities = [
             Official Team
           </h2>
           <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-            Tim pelatih profesional bersertifikat dengan pengalaman internasional
+            Tim profesional lengkap untuk pembinaan holistik atlet futsal
           </p>
         </div>
 
-        <!-- Coaches Grid -->
+        <!-- Coaches Grid - 3 kolom -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div 
             v-for="coach in coaches" 
@@ -240,7 +283,7 @@ const facilities = [
       </div>
     </section>
 
-    <!-- Fasilitas Kami Section - Updated Design -->
+    <!-- Fasilitas Kami Section -->
     <section class="py-20 bg-gray-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Header -->
@@ -282,8 +325,6 @@ const facilities = [
         </div>
       </div>
     </section>
-
-    <!-- Section Nilai-Nilai Kami DIHAPUS -->
 
   </div>
 </template>
